@@ -11,6 +11,8 @@ import {
   StyleSheet,
   useColorScheme
 } from 'react-native';
+import BottomNavigation from './src/navigation/BottomTabs.tsx';
+import { NavigationContainer } from '@react-navigation/native';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -18,6 +20,9 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <NavigationContainer>
+        <BottomNavigation />
+      </NavigationContainer>
     </SafeAreaView>
   );
 }
